@@ -15,3 +15,11 @@ FROM _Subscribers a
 LEFT JOIN _Sent s ON a.SubscriberKey = s.SubscriberKey
 LEFT JOIN _Job j ON j.JobID = s.JobID
 WHERE a.Status IN ('Unsubscribed', 'Held')
+-------------------------------------------------------------------------------------------------------
+SELECT
+ls.Status,
+ls.EmailAddress,
+ls.SubscriberKey
+FROM TestSubscriberkeyundeliver as se
+left join ent._ListSubscribers as ls
+on ls.SubscriberKey = se.SubscriberKey
